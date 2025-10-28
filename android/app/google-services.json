@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "812093812641",
+    "firebase_url": "https://carpooling-3d602-default-rtdb.firebaseio.com",
+    "project_id": "carpooling-3d602",
+    "storage_bucket": "carpooling-3d602.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812093812641:android:9925073b8a0ec36d4665e0",
+        "android_client_info": {
+          "package_name": "com.rahul.uberclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD36rXeBvXp2lH8YVuC_ptdyD6bmg0Hyug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:812093812641:android:c1cb7525969076174665e0",
+        "android_client_info": {
+          "package_name": "com.rahul.uberdriverapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD36rXeBvXp2lH8YVuC_ptdyD6bmg0Hyug"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
