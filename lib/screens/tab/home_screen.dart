@@ -9,6 +9,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:uberdriverapp/driver_info.dart';
 import 'package:uberdriverapp/mapStyleCustom.dart';
 import 'package:uberdriverapp/map_info.dart';
+import 'package:uberdriverapp/push_notofication_system/push_notofication_system.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,6 +33,13 @@ class _HomeScreenState extends State<HomeScreen> {
   String titleToDisplay = "Ready To Drive";
 
   DatabaseReference? newRideStatusReference;
+
+  startPushNotificationSysntem() {
+    PushNotificationSystem pushNotoficationSystem = PushNotificationSystem();
+    pushNotoficationSystem.saveFCMToken();
+
+    pushNotoficationSystem.listenForNewNotification(context);
+  }
 
   obtainuserLivePosition() async {
     bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
@@ -111,6 +119,13 @@ class _HomeScreenState extends State<HomeScreen> {
     newRideStatusReference!.onDisconnect();
     newRideStatusReference!.remove();
     newRideStatusReference = null;
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    startPushNotificationSysntem();
   }
 
   @override

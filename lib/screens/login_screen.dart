@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:uberdriverapp/screens/signup_screen.dart';
+import 'package:uberdriverapp/screens/tab/home_screen.dart';
 
 import '../helper/helper_functions.dart';
 import '../widgets/custom_text_field.dart';
@@ -72,7 +73,10 @@ class _LoginScreenState extends State<LoginScreen> {
           context,
         );
 
-        //Navigator.push(context, MaterialPageRoute(builder: (c)=> HomeScreen()));
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (c) => HomeScreen()),
+        );
       }
     } on FirebaseAuthException catch (exp) {
       displaySnackBar(exp.toString(), context);
