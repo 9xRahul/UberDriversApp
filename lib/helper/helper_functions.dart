@@ -7,6 +7,7 @@ import '../models/direction_details.dart';
 import '../widgets/snackbar.dart';
 
 class HelperFunctions {
+  
   retrieveDriverData(BuildContext context) async {
     String status = "";
     DatabaseReference usersReference = FirebaseDatabase.instance

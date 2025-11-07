@@ -7,6 +7,7 @@ import 'package:flutter_geofire/flutter_geofire.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:uberdriverapp/driver_info.dart';
+import 'package:uberdriverapp/helper/helper_functions.dart';
 import 'package:uberdriverapp/mapStyleCustom.dart';
 import 'package:uberdriverapp/map_info.dart';
 import 'package:uberdriverapp/push_notofication_system/push_notofication_system.dart';
@@ -33,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
   String titleToDisplay = "Ready To Drive";
 
   DatabaseReference? newRideStatusReference;
+
+  HelperFunctions helperFunctions = HelperFunctions();
 
   startPushNotificationSysntem() {
     PushNotificationSystem pushNotoficationSystem = PushNotificationSystem();
@@ -71,6 +74,8 @@ class _HomeScreenState extends State<HomeScreen> {
     CameraPosition cp = CameraPosition(target: latLangUserPosition, zoom: 16);
 
     controllerGMapInstance!.animateCamera(CameraUpdate.newCameraPosition(cp));
+
+    helperFunctions.retrieveDriverData(context);
   }
 
   readyToDrive() async {
@@ -126,6 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
     // TODO: implement initState
     super.initState();
     startPushNotificationSysntem();
+    
   }
 
   @override
